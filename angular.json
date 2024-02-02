@@ -45,6 +45,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "https://sivanorm.github.io/SmartNutrition/",
               "budgets": [
                 {
                   "type": "initial",
