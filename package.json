@@ -11,8 +11,8 @@
     "deploy": "ng build --base-href /SmartNutrition/ && npx gh-pages -d dist/SmartNutrition",
     "lint": "ng lint",
     "build-prod": "ng build --configuration=production",
-    "commitMessage": "Commited on : Currentdate",
-    "host_app": "xcopy /E /Y \"root/hosting/browser\" \"docs\" && git add . && git commit -m \" $npm_package_scripts_commitMessage \" && git push"
+    "commitMessage": "Commited By Script",
+    "host_app": "xcopy /E /Y \"root/hosting/browser\" \"docs\" && git add . && git commit -m \"$npm_package_scripts_commitMessage\" && git push"
   },
   "private": true,
   "dependencies": {
