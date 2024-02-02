@@ -11,8 +11,8 @@ import { Component } from '@angular/core';
 export class SitehomeComponent {
   navList = [
     { name: 'Home', flag: 'HM' },
-    { name: 'Gallery', flag: 'GL' },
-    { name: 'Activities', flag: 'AC' },
+    { name: 'About', flag: 'GL' },
+    { name: 'Products', flag: 'AC' },
     { name: 'Partnership', flag: 'PT' },
     { name: 'Competition', flag: 'CP' },
   ];
