@@ -29,7 +29,11 @@
                 "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
                 "inject": true
               },
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/globalstyles/buttons.scss",
+              "src/globalstyles/colours.scss",
+              "src/globalstyles/fonts.scss",
+              "src/customize.scss"
             ],
             "scripts": [
               {
