@@ -24,8 +24,19 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": [],
+            "styles": [
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true
+              },
+              "src/styles.scss"
+            ],
+            "scripts": [
+              {
+                "input": "node_modules/bootstrap/dist/js/bootstrap.min.js",
+                "inject": true
+              }
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -81,8 +92,19 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": []
+            "styles": [
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "inject": true
+              },
+              "src/styles.scss"
+            ],
+            "scripts": [
+              {
+                "input": "node_modules/bootstrap/dist/js/bootstrap.min.js",
+                "inject": true
+              }
+            ]
           }
         },
         "lint": {
@@ -95,6 +117,7 @@
     }
   },
   "cli": {
-    "schematicCollections": ["@angular-eslint/schematics"]
+    "schematicCollections": ["@angular-eslint/schematics"],
+    "analytics": "dee61bd1-6e96-4d0f-b8f3-0ec587985efc"
   }
 }
