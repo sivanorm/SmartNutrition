@@ -10,7 +10,10 @@
     "serve:ssr:hosting": "node dist/hosting/server/server.mjs",
     "deploy": "ng build --base-href /SmartNutrition/ && npx gh-pages -d dist/SmartNutrition",
     "lint": "ng lint",
-    "build:gh-pages": "ng build --configuration=production && xcopy /E /Y \"root/hosting/browser\" \"docs\""
+    "build-prod": "ng build --configuration=production",
+    "build:gh-pages": "ng build --configuration=production && xcopy /E /Y \"root/hosting/browser\" \"docs\"",
+    "host_appv1": "xcopy /E /Y \"root/hosting/browser\" \"docs\" && git add . && git commit -m \"commit by script \" && git push",
+    "host_app": "ng build --configuration=production && cp -r root/hosting/browser/* docs/ && git add . && git commit -m \"commit by script\" && git push"
   },
   "private": true,
   "dependencies": {
