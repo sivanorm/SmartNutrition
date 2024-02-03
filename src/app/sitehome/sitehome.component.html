@@ -2,7 +2,7 @@
   <div class="container pt-2">
     <div class="row mt-4">
       <div class="col-md-3 text-right order-1">
-        <img src="assets/images/logo.webp" alt="" />
+        <img src="../../assets/images/logo.webp" alt="" />
       </div>
       <div class="col-md-6 order-3">
         <div class="nav">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="Main_logo d-flex align-items-center justify-content-center">
-      <img src="assets/images/main-bg.webp" alt="" />
+      <img src="../../assets/images/main-bg.webp" alt="" />
     </div>
     <div class="row">
       <div class="col-md-12 py-3">
@@ -48,7 +48,11 @@
         <div class="">
           <div class="round_bg"></div>
           <h2>Joyful Experiences</h2>
-          <img src="assets/images/Artwork-5.webp" class="rocket_img" alt="" />
+          <img
+            src="../../assets/images/Artwork-5.webp"
+            class="rocket_img"
+            alt=""
+          />
         </div>
         <p class="mt-5 pr-5">
           Yardstick's vision is to make learning enriching and joyful
@@ -66,7 +70,7 @@
         <div class="d-flex align-items-center justify-content-center mb-5">
           <h2 class="theme_color">Our Products</h2>
           <img
-            src="assets/images/Artwork-4.webp"
+            src="../../assets/images/Artwork-4.webp"
             alt=""
             class="ml-3 cube_img"
           />
@@ -105,7 +109,10 @@
       >
         <div class="pride_list" *ngFor="let data of prideList">
           <div class="list_bg">
-            <img src="assets/images/pride_imgs/{{ data?.img }}.webp" alt="" />
+            <img
+              src="../../assets/images/pride_imgs/{{ data?.img }}.webp"
+              alt=""
+            />
           </div>
           <p class="text-center">{{ data?.name }}</p>
         </div>
@@ -124,7 +131,7 @@
           <div *ngFor="let image of images; let i = index">
             <div [ngClass]="{ fade: i === currentIndex }">
               <img
-                src="assets/images/pride_imgs/{{ image?.img }}"
+                src="../../assets/images/pride_imgs/{{ image?.img }}"
                 alt="Slide"
               />
             </div>
@@ -137,7 +144,7 @@
   <div class="container-fluid py-5" style="background-color: aliceblue">
     <div class="d-flex align-items-center justify-content-center">
       <div class="qoute_div">
-        <img src="assets/images/msgimg.webp" alt="" />
+        <img src="../../assets/images/msgimg.webp" alt="" />
       </div>
     </div>
     <div class="row">
