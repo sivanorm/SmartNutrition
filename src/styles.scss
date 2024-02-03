@@ -93,3 +93,19 @@
 ::-webkit-scrollbar-button:horizontal:increment {
   background-image: url("./assets/images/scroll_right.png");
 }
+
+.modal-xsm {
+  max-width: 300px;
+}
+.modal-sm {
+  max-width: 40%;
+}
+.modal-md {
+  max-width: 55%;
+}
+.modal-lg {
+  max-width: 75%;
+}
+.modal-xl {
+  max-width: 90%;
+}

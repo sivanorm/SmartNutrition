@@ -1,5 +1,6 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-sitehome',
@@ -9,13 +10,6 @@ import { Component } from '@angular/core';
   styleUrl: './sitehome.component.scss',
 })
 export class SitehomeComponent {
-  navList = [
-    { name: 'Home', flag: 'HM' },
-    { name: 'About', flag: 'GL' },
-    { name: 'Products', flag: 'AC' },
-    { name: 'Partnership', flag: 'PT' },
-    { name: 'Competition', flag: 'CP' },
-  ];
   products = [
     { name: 'BeeCurious', flag: 'BC' },
     { name: 'Quabits', flag: 'QB' },
@@ -23,6 +17,14 @@ export class SitehomeComponent {
     { name: 'YELP', flag: 'YP' },
     { name: 'Litmus', flag: 'LT' },
     { name: 'School Management', flag: 'SM' },
+  ];
+
+  navList = [
+    { name: 'Home', flag: 'HM', sublist: [] },
+    { name: 'About', flag: 'AB', sublist: [] },
+    { name: 'Products', flag: 'PD', sublist: this.products },
+    { name: 'Partnership', flag: 'PT', sublist: [] },
+    { name: 'Competition', flag: 'CP', sublist: [] },
   ];
 
   prideList = [
@@ -44,18 +46,13 @@ export class SitehomeComponent {
   constructor() {}
 
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   $('.rocket_img').css({'display':'block','position':'relative', right:'25px', top: '-80px'})
-    // },5000);
-    // window.addEventListener('scroll', function() {
-    //   // Check if the page is scrolled
-    //   if (window.scrollY > 0) {
-    //     $('.rocket_img').css({'display':'block','position':'relative', 'right':'25px', 'top': '-80px'})
-    //   } else {
-    //     console.log('Page is not scrolled');
-    //   }
-    // });
-    // this.startSlideshow();
+    $('.rocket_img').animate(
+      {
+        top: '-70px',
+        right: '80px',
+      },
+      3000
+    );
   }
 
   startSlideshow() {
@@ -63,4 +60,18 @@ export class SitehomeComponent {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
     }, 2000);
   }
+
+  // dropdown(ele: any) {
+  //   $('.drop_down_div').hide('3000');
+  //   if (
+  //     $(ele).closest('li').attr('id') == 'AB' ||
+  //     $(ele).closest('li').attr('id') == 'PD'
+  //   ) {
+  //     $(ele).css({ position: 'relative' });
+  //     $(ele).closest('li').find('.ddl').append($('.drop_down_div'));
+  //     $('.drop_down_div').slideDown('8000');
+  //   } else {
+  //     $('.drop_down_div').slideUp('3000');
+  //   }
+  // }
 }

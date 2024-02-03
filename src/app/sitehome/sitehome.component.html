@@ -1,17 +1,30 @@
 <div style="position: relative" class="main-div">
   <div class="container pt-2">
     <div class="row mt-4">
-      <div
-        class="col-md-10 offset-1 d-flex align-items-center justify-content-evenly"
-      >
+      <div class="col-md-3 text-right order-1">
         <img src="assets/images/logo.webp" alt="" />
+      </div>
+      <div class="col-md-6 order-3">
         <div class="nav">
+          <!-- <ul class="dropdown">
+            <li *ngFor="let data of navList" id="{{ data?.flag }}">
+              <span (mouseenter)="dropdown($event.target)">{{
+                data?.name
+              }}</span>
+              <div class="ddl"></div>
+            </li>
+          </ul> -->
           <ul>
-            <li *ngFor="let data of navList" type="{{ data?.flag }}">
+            <li *ngFor="let data of navList" id="{{ data?.flag }}">
               {{ data?.name }}
+              <ul>
+                <li *ngFor="let su of data.sublist">{{ su?.name }}</li>
+              </ul>
             </li>
           </ul>
         </div>
+      </div>
+      <div class="col-md-3 text-left order-2">
         <button class="btn contact_us px-4 text-dark">
           <span>Contact Us</span>
         </button>
@@ -31,9 +44,8 @@
 
   <div class="container">
     <div class="row mb-5" style="margin-top: 150px">
-      <div class="col-md-5 offset-1">
-        <!-- <img src="Atwork-5.webp" alt="" class="rocket_img d-none" /> -->
-        <div class="position-relative">
+      <div class="col-md-5 offset-md-1 position-relative">
+        <div class="">
           <div class="round_bg"></div>
           <h2>Joyful Experiences</h2>
           <img src="assets/images/Artwork-5.webp" class="rocket_img" alt="" />
@@ -46,14 +58,18 @@
         </p>
         <button class="el_btn el_btn_dark">Know More</button>
       </div>
-      <div class="col-md-5 bg-dark"></div>
+      <div class="col-md-5 bg-dark" style="height: 200px"></div>
     </div>
 
     <div class="row border-top border-secondary">
-      <div class="col-md-6 offset-3 text-center py-5">
+      <div class="col-md-6 offset-md-3 text-center py-5">
         <div class="d-flex align-items-center justify-content-center mb-5">
-          <h2>Our Products</h2>
-          <img src="assets/images/Artwork-4.webp" alt="" class="ml-3" />
+          <h2 class="theme_color">Our Products</h2>
+          <img
+            src="assets/images/Artwork-4.webp"
+            alt=""
+            class="ml-3 cube_img"
+          />
         </div>
         <p class="f-18">Based on Child Centered Experiential Learning</p>
         <p>
@@ -83,7 +99,10 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12 d-flex justify-content-evenly">
+      <div
+        class="col-md-12 d-flex justify-content-evenly"
+        style="flex-wrap: wrap"
+      >
         <div class="pride_list" *ngFor="let data of prideList">
           <div class="list_bg">
             <img src="assets/images/pride_imgs/{{ data?.img }}.webp" alt="" />
@@ -122,7 +141,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 offset-3">
+      <div class="col-md-6 offset-md-3">
         <h4 class="text-center">
           “The important thing is not to stop questioning. Curiosity has its own
           reason for existence.
@@ -134,7 +153,7 @@
 
   <div class="container-fluid bg-dark text-white p-3 f-13">
     <div class="row">
-      <div class="col-md-10 offset-1">
+      <div class="col-md-10 offset-md-1">
         <div class="row">
           <div class="col-md-6">
             <p class="bold text-decoration-underline">
@@ -266,5 +285,13 @@
       />
       Sorry, your browser does not support inline SVG.
     </svg>
+  </div>
+</div>
+
+<div class="modal fade" id="drop_dowm_modal">
+  <div class="modal-dialog modal-dialog-centered modal-xsm">
+    <div class="modal-content">
+      <div class="modal-body" style="height: 300px"></div>
+    </div>
   </div>
 </div>

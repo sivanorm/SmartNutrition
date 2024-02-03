@@ -1,7 +1,7 @@
 @import "../../globalstyles/fonts.scss";
 @import "../../globalstyles/buttons.scss";
 .nav {
-  ul {
+  & > ul {
     padding: 0px;
     margin: 0px;
     display: flex;
@@ -12,10 +12,25 @@
       font-family: $fontfamily_1;
       font-size: $font_lg;
       color: #000;
-      // font-weight: bold;
+      position: relative;
+      & > ul {
+        display: none;
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+        position: absolute;
+        width: 300px;
+        li {
+          background-color: aliceblue;
+        }
+      }
       &:hover {
         color: $theme-color;
         cursor: pointer;
+        & > ul {
+          display: block;
+          animation: linear 2s;
+        }
       }
     }
   }
@@ -115,25 +130,62 @@ img {
 
 .round_bg {
   background-color: #f6b250;
-  height: 80px;
-  width: 80px;
   border-radius: 50%;
   position: absolute;
   z-index: -1;
-  top: -25px;
-  left: -20px;
+  animation: round_bg cubic-bezier(0.075, 0.82, 0.165, 1) 3s infinite;
 }
+
+@keyframes round_bg {
+  0% {
+    width: 0px;
+    height: 0px;
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    top: -25px;
+    left: -20px;
+  }
+}
+
 .main-div {
   font-family: $fontfamily_1;
-}
-.rocket_img {
-  rotate: 30deg;
-  top: -50px;
-  right: 90px;
-  position: absolute;
 }
 .qoute_div {
   background-color: $theme-color;
   padding: 10px;
   border-radius: 50%;
+}
+
+.cube_img {
+  animation: rotate 4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rocket_img {
+  rotate: 50deg;
+  position: absolute;
+  bottom: 0px;
+}
+
+.drop_down_div {
+  width: 300px;
+  height: 300px;
+  display: none;
+  position: absolute;
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px gray;
+  background-color: #fff;
 }
